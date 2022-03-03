@@ -73,14 +73,14 @@ class Readability {
   }
   averageSentenceLength(text) {
     const asl = this.lexiconCount(text) / this.trueSentenceCount(text);
-    const returnVal = Math.legacyRound(asl, 1);
+    const returnVal = Math.legacyRound(asl, 3);
     return !isNaN(returnVal) ? returnVal : 0.0;
   }
   averageSyllablePerWord(text) {
     const syllables = this.syllableCount(text);
     const words = this.lexiconCount(text);
     const syllablePerWord = syllables / words;
-    const returnVal = Math.legacyRound(syllablePerWord, 1);
+    const returnVal = Math.legacyRound(syllablePerWord, 3);
     return !isNaN(returnVal) ? returnVal : 0.0;
   }
   averageCharacterPerWord(text) {
@@ -120,7 +120,7 @@ class Readability {
     const sentenceLength = this.averageSentenceLength(text);
     const syllablePerWord = this.averageSyllablePerWord(text);
     const flesch = 0.39 * sentenceLength + 11.8 * syllablePerWord - 15.59;
-    const returnVal = Math.legacyRound(flesch, 1);
+    const returnVal = Math.legacyRound(flesch, 2);
     return returnVal;
   }
   polySyllableCount(text) {
