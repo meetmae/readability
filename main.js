@@ -68,7 +68,7 @@ class Readability {
     return validSentences > 1 ? validSentences : 1;
   }
   trueSentenceCount(text) {
-    let sentences = text.split(/ *[.?!]['")\]]*[ |\n](?=[A-Z])/gi);
+    let sentences = text.split(/ *[.?!]['")\]]*[\s]/gi);
     return sentences.length;
   }
   averageSentenceLength(text) {
